@@ -47,7 +47,10 @@ button {
 
 main.content {
   position: relative;
+  display: flex;
+  flex-direction: column;
   width: 100vw;
+  height: 100vh;
   max-width: 720px;
   height: 100vh;
   padding: 1.5rem;
@@ -122,7 +125,7 @@ main.content {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  height: 47vh;
+  height: 100%;
   padding-right: 10px;
   overflow-y: auto;
 }
@@ -258,10 +261,6 @@ main.content {
     padding: 0.3rem 1rem;
   }
 
-  .music-list {
-    height: 53vh;
-  }
-
   .player-header .img {
     width: 2.5rem;
     height: 2.5rem;
@@ -270,11 +269,5 @@ main.content {
   .player-buttons button {
     font-size: 1.2rem;
     padding: 0 2rem;
-  }
-}
-
-@media screen and (width < 480px) {
-  .music-list {
-    height: 35vh;
   }
 }

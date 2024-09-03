@@ -102,12 +102,17 @@ function renderPlaylist() {
       </div>
     `;
 
-    music.addEventListener("click", (e) =>
-      changeMusic(+e.target.getAttribute("data-index"))
-    );
+    music.addEventListener("click", (e) => {
+      changeSelectedPlaylist();
+      changeMusic(+e.target.getAttribute("data-index"));
+    });
 
     musicList.appendChild(music);
   });
+}
+
+function changeSelectedPlaylist() {
+  selectedPlaylist = [...renderedPlaylist];
 }
 
 // Theme changer listener & functions
@@ -139,7 +144,6 @@ audio.addEventListener("ended", forwardMusic);
 playerBarContainer.addEventListener("click", setProgress);
 
 function changeMusic(index) {
-  selectedPlaylist = [...renderedPlaylist];
   currentPlayingIndex = index;
 
   const currentSong = selectedPlaylist[currentPlayingIndex];
@@ -195,10 +199,10 @@ function setProgress(e) {
 }
 
 // Filter Listener & functions
-narutoFilter.addEventListener("click", setNarutoPlaylist);
-borutoFilter.addEventListener("click", setBorutoPlaylist);
+narutoFilter.addEventListener("click", renderNarutoPlaylist);
+borutoFilter.addEventListener("click", renderBorutoPlaylist);
 
-function setNarutoPlaylist() {
+function renderNarutoPlaylist() {
   if (narutoFilter.classList.contains("active")) {
     narutoFilter.classList.remove("active");
     renderedPlaylist = [...playlist];
@@ -211,7 +215,7 @@ function setNarutoPlaylist() {
   }
 }
 
-function setBorutoPlaylist() {
+function renderBorutoPlaylist() {
   if (borutoFilter.classList.contains("active")) {
     borutoFilter.classList.remove("active");
     renderedPlaylist = [...playlist];
