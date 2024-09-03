@@ -244,3 +244,9 @@ main.content {
     transform: rotate(360deg);
   }
 }
+
+@media screen and (width < 560px) {
+  .player-buttons button {
+    padding: 0.5rem 2rem;
+  }
+}
