@@ -245,8 +245,36 @@ main.content {
   }
 }
 
-@media screen and (width < 560px) {
+@media screen and (width < 720px) {
+  .header {
+    margin-bottom: 0.7rem;
+  }
+  .header h1 {
+    font-size: 1.7rem;
+  }
+
+  .music-filter button {
+    font-size: 1rem;
+    padding: 0.3rem 1rem;
+  }
+
+  .music-list {
+    height: 53vh;
+  }
+
+  .player-header .img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
   .player-buttons button {
-    padding: 0.5rem 2rem;
+    font-size: 1.2rem;
+    padding: 0 2rem;
+  }
+}
+
+@media screen and (width < 480px) {
+  .music-list {
+    height: 35vh;
   }
 }
