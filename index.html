@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="boruto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Teko font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fontawesome kit -->
+    <script
+      src="https://kit.fontawesome.com/4d69af1ea6.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Konoha Musical</title>
+  </head>
+  <body>
+    <main class="content">
+      <!-- HEADER -->
+      <header class="header">
+        <h1>Konoha Musical</h1>
+        <button class="theme-changer icon">
+          <img src="./assets/images/Vortex.svg" alt="Vortex icon" />
+        </button>
+      </header>
+
+      <!-- FILTER -->
+      <div class="music-filter">
+        <button class="naruto-filter">Naruto</button>
+        <button class="boruto-filter">Boruto</button>
+      </div>
+
+      <!-- MUSIC LIST -->
+      <ul class="music-list"></ul>
+
+      <!-- MUSIC PLAYER -->
+      <div class="player">
+        <header class="player-header">
+          <img src="./assets/images/Default.jpg" alt="song image" class="img" />
+          <div class="data">
+            <span class="name">-</span>
+            <span class="singer">-</span>
+          </div>
+        </header>
+
+        <audio src="" id="audio"></audio>
+
+        <div class="player-bar-container">
+          <div class="player-bar-inner"></div>
+        </div>
+
+        <div class="player-buttons">
+          <button class="backward-btn">
+            <i class="fa-solid fa-backward-step"></i>
+          </button>
+          <button class="play-pause-btn">
+            <i class="fa-solid fa-play"></i>
+          </button>
+          <button class="forward-btn">
+            <i class="fa-solid fa-forward-step"></i>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
