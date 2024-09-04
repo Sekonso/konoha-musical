@@ -22,7 +22,7 @@ const forwardBtn = document.querySelector(".forward-btn");
 
 // Themes
 const themes = ["naruto", "shippuden", "boruto", "tbv"];
-let currentThemeIndex = localStorage.getItem("theme");
+let currentThemeIndex = JSON.parse(localStorage.getItem("theme"));
 
 // Playlist
 const playlist = [
@@ -83,7 +83,8 @@ let currentPlayingIndex = -1;
 
 // Init
 renderPlaylist();
-
+changeTheme();
+document.documentElement.style.visibility = "visible";
 // Playlist functions
 function renderPlaylist() {
   musicList.innerHTML = "";
@@ -116,18 +117,19 @@ function changeSelectedPlaylist() {
 }
 
 // Theme changer listener & functions
-themeChanger.addEventListener("click", changeTheme);
+themeChanger.addEventListener("click", () => changeTheme("change"));
 
-function changeTheme() {
+function changeTheme(option) {
   if (
     typeof currentThemeIndex !== "number" ||
-    currentThemeIndex < 0 ||
-    currentThemeIndex >= themes.length - 1
+    currentThemeIndex <= 0 ||
+    currentThemeIndex >= themes.length
   ) {
-    currentThemeIndex = -1;
+    currentThemeIndex = 0;
   }
 
-  currentThemeIndex++;
+  if (option === "change") currentThemeIndex++;
+
   localStorage.setItem("theme", currentThemeIndex);
   document.documentElement.setAttribute(
     "data-theme",
